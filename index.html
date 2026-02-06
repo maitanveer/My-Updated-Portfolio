@@ -1,0 +1,1276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanveer | Elite Frontend Developer</title>
+    
+    <!-- Theme prevention script -->
+    <script>
+        (function() {
+            // Get stored theme or default to dark
+            const storedTheme = localStorage.getItem('theme') || 'dark';
+            const root = document.documentElement;
+            
+            // Apply theme immediately to prevent flash
+            if (storedTheme === 'light') {
+                root.classList.add('light-theme');
+            }
+            
+            // Hide page until styles are loaded
+            document.documentElement.style.visibility = 'hidden';
+            document.documentElement.style.opacity = '0';
+            
+            // Show page once DOM is loaded
+            document.addEventListener('DOMContentLoaded', function() {
+                document.documentElement.style.visibility = '';
+                document.documentElement.style.opacity = '1';
+                document.documentElement.style.transition = 'opacity 0.3s ease';
+            });
+        })();
+    </script>
+    
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <!-- Add this to your existing head section -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" 
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <!-- Particle Canvas Background -->
+    <canvas id="particle-canvas"></canvas>
+
+    <!-- Cursor Effects -->
+    <div class="cursor-dot"></div>
+    <div class="cursor-outline"></div>
+
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="preloader-content">
+            <div class="loading-spinner"></div>
+            <span class="loading-text">Initializing Portfolio</span>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo">
+                <span class="logo-text">Tanveer</span>
+                <span class="logo-glow"></span>
+            </a>
+            
+            <div class="nav-menu">
+                <a href="#about" class="nav-link"><span>About</span></a>
+                <a href="#skills" class="nav-link"><span>Skills</span></a>
+                <a href="#projects" class="nav-link"><span>Projects</span></a>
+                <a href="#experience" class="nav-link"><span>Experience</span></a>
+                <a href="#contact" class="nav-link"><span>Contact</span></a>
+                <button class="theme-toggle" aria-label="Toggle theme">
+                    <i class="fas fa-moon"></i>
+                </button>
+            </div>
+
+            <button class="mobile-menu-btn" aria-label="Mobile menu">
+                <span class="menu-line"></span>
+                <span class="menu-line"></span>
+                <span class="menu-line"></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">ELITE FRONTEND DEVELOPER</div>
+                <h1 class="hero-title">
+                    <span class="title-line">Crafting Digital</span>
+                    <span class="title-line highlight">
+                        <span class="highlight-text">Experiences</span>
+                        <span class="highlight-glow"></span>
+                    </span>
+                    <span class="title-line">That Convert & Captivate</span>
+                </h1>
+                <p class="hero-subtitle">
+                    I transform complex problems into elegant, performant solutions through cutting-edge 
+                    frontend architecture and immersive UI/UX design.
+                </p>
+                <div class="hero-cta">
+                    <a href="#projects" class="btn btn-primary magnetic">
+                        <span>View My Work</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <a href="#contact" class="btn btn-secondary magnetic">
+                        <span>Let's Connect</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="floating-card">
+                    <div class="card-inner">
+                        <div class="code-preview">
+                            <div class="code-header">
+                                <div class="code-dots">
+                                    <span class="dot red"></span>
+                                    <span class="dot yellow"></span>
+                                    <span class="dot green"></span>
+                                </div>
+                                <span class="code-filename">portfolio.js</span>
+                            </div>
+                            <pre class="code-content">
+<span class="code-keyword">const</span> <span class="code-var">developer</span> = {
+    <span class="code-prop">name</span>: <span class="code-string">"Tanveer Ahmad"</span>,
+    <span class="code-prop">role</span>: <span class="code-string">"Frontend Developer"</span>,
+    <span class="code-prop">specialties</span>: [
+        <span class="code-string">"React Ecosystem"</span>,
+        <span class="code-string">"WebGL & Canvas"</span>,
+        <span class="code-string">"Performance Optimization"</span>,
+        <span class="code-string">"Design Systems"</span>
+    ],
+    <span class="code-prop">availableForWork</span>: <span class="code-boolean">true</span>
+};</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="scroll-indicator">
+            <div class="scroll-line"></div>
+            <span></span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="title-text">About Me</span>
+                </h2>
+                <p class="section-subtitle">The architect behind the interface</p>
+            </div>
+            
+            <div class="about-grid">
+                <div class="about-content">
+                    <h3 class="about-headline">Building the future of web experiences, one pixel at a time</h3>
+                    <p class="about-text">
+                        With over 4 years of expertise in modern frontend development, I specialize in creating 
+                        performant, accessible, and visually stunning digital products. My approach combines 
+                        technical precision with creative vision.
+                    </p>
+                    <p class="about-text">
+                        I build modern, user-focused web applications using the MERN stack, WordPress, and 
+                        strong UI/UX principles. I focus on clean design, smooth interactions, and scalable 
+                        solutions that turn ideas into reliable digital products.
+                    </p>
+                    
+                    <div class="stats-grid">
+                        <div class="stat-card">
+                            <div class="stat-number" data-count="20">0</div>
+                            <div class="stat-label">Projects Delivered</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" data-count="4">0</div>
+                            <div class="stat-label">Years Experience</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-number" data-count="100">0</div>
+                            <div class="stat-label">Client Satisfaction</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-visual">
+                    <div class="visual-card">
+                            <div class="visual-glow"></div>
+                        </div>
+                    <img src="assets/asa.png" 
+                                 alt="Tanveer Ahmad" class="profile-image">
+                    <div class="visual-container">
+                        <div class="floating-shape shape-1"></div>
+                        <div class="floating-shape shape-2"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Updated Skills Section (replaces the existing one) -->
+<section id="skills" class="skills-section">
+    <div class="section-container">
+        <div class="section-header">
+            <h2 class="section-title">
+                <span class="title-number">02</span>
+                <span class="title-text">Technical Arsenal</span>
+            </h2>
+            <p class="section-subtitle">Tools & technologies I master</p>
+        </div>
+        
+        <div class="skills-category-grid">
+            <!-- Frontend Development -->
+            <div class="skills-category reveal">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3 class="category-title">Frontend Development</h3>
+                    <div class="category-count">12 Skills</div>
+                </div>
+                <div class="skills-list">
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">React.js</span>
+                            <span class="skill-level">Expert</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="95"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Next.js</span>
+                            <span class="skill-level">Expert</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="92"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">TypeScript</span>
+                            <span class="skill-level">Advanced</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Vue.js</span>
+                            <span class="skill-level">Advanced</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">WebGL/Three.js</span>
+                            <span class="skill-level">Advanced</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="88"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Backend & DevOps -->
+            <div class="skills-category reveal delay-1">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3 class="category-title">Backend & DevOps</h3>
+                    <div class="category-count">8 Skills</div>
+                </div>
+                <div class="skills-list">
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Node.js</span>
+                            <span class="skill-level">Expert</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">GraphQL</span>
+                            <span class="skill-level">Advanced</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="87"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Docker</span>
+                            <span class="skill-level">Advanced</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">AWS</span>
+                            <span class="skill-level">Intermediate</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="80"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">PostgreSQL</span>
+                            <span class="skill-level">Advanced</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="82"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- UI/UX Design -->
+            <div class="skills-category reveal delay-2">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3 class="category-title">UI/UX Design</h3>
+                    <div class="category-count">10 Skills</div>
+                </div>
+                <div class="skills-list">
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Figma</span>
+                            <span class="skill-level">Expert</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="95"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Design Systems</span>
+                            <span class="skill-level">Expert</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="92"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">User Research</span>
+                            <span class="skill-level">Advanced</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="85"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Prototyping</span>
+                            <span class="skill-level">Expert</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="90"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Animation</span>
+                            <span class="skill-level">Advanced</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="88"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tools & Workflow -->
+            <div class="skills-category reveal delay-3">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3 class="category-title">Tools & Workflow</h3>
+                    <div class="category-count">6 Skills</div>
+                </div>
+                <div class="skills-list">
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Git</span>
+                            <span class="skill-level">Expert</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="96"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Webpack/Vite</span>
+                            <span class="skill-level">Advanced</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="89"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Jest/Cypress</span>
+                            <span class="skill-level">Advanced</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="86"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">CI/CD</span>
+                            <span class="skill-level">Intermediate</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="83"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Agile/Scrum</span>
+                            <span class="skill-level">Expert</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" data-width="90"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tech Stack -->
+        <div class="tech-stack reveal">
+            <h3 class="tech-stack-title">Tech Stack</h3>
+            <div class="tech-icons">
+                <div class="tech-icon" data-tooltip="React">
+                    <i class="devicon-react-original colored"></i>
+                </div>
+                <div class="tech-icon" data-tooltip="TypeScript">
+                    <i class="devicon-typescript-plain colored"></i>
+                </div>
+                <div class="tech-icon" data-tooltip="Next.js">
+                    <i class="devicon-nextjs-plain colored"></i>
+                </div>
+                <div class="tech-icon" data-tooltip="Node.js">
+                    <i class="devicon-nodejs-plain colored"></i>
+                </div>
+                <div class="tech-icon" data-tooltip="GraphQL">
+                    <i class="devicon-graphql-plain colored"></i>
+                </div>
+                <div class="tech-icon" data-tooltip="Docker">
+                    <i class="devicon-docker-plain colored"></i>
+                </div>
+                <div class="tech-icon" data-tooltip="AWS">
+                    <i class="devicon-amazonwebservices-plain colored"></i>
+                </div>
+                <div class="tech-icon" data-tooltip="Git">
+                    <i class="devicon-git-plain colored"></i>
+                </div>
+                <div class="tech-icon" data-tooltip="Figma">
+                    <i class="devicon-figma-plain colored"></i>
+                </div>
+                <div class="tech-icon" data-tooltip="Vue.js">
+                    <i class="devicon-vuejs-plain colored"></i>
+                </div>
+                <div class="tech-icon" data-tooltip="MongoDB">
+                    <i class="devicon-mongodb-plain colored"></i>
+                </div>
+                <div class="tech-icon" data-tooltip="PostgreSQL">
+                    <i class="devicon-postgresql-plain colored"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Updated Projects Section (replaces the existing one) -->
+<section id="projects" class="projects-section">
+    <div class="section-container">
+        <div class="section-header">
+            <h2 class="section-title">
+                <span class="title-number">03</span>
+                <span class="title-text">Featured Projects</span>
+            </h2>
+            <p class="section-subtitle">Innovation meets execution</p>
+        </div>
+
+        <!-- Project Filters -->
+        <div class="project-filters reveal">
+            <button class="filter-btn active" data-filter="all">All Projects</button>
+            <button class="filter-btn" data-filter="frontend">Frontend</button>
+            <button class="filter-btn" data-filter="fullstack">Full Stack</button>
+            <button class="filter-btn" data-filter="webgl">WebGL/3D</button>
+            <button class="filter-btn" data-filter="opensource">Open Source</button>
+        </div>
+        
+        <div class="projects-grid">
+            <!-- Project 1: Quantum Finance -->
+            <div class="project-card reveal" data-category="fullstack,webgl">
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                         alt="Quantum Finance Dashboard">
+                    <div class="project-overlay">
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-badge featured">Featured</div>
+                    <div class="project-badge new">New</div>
+                </div>
+                <div class="project-content">
+                    <div class="project-header">
+                        <h3 class="project-title">Quantum Finance Dashboard</h3>
+                        <div class="project-year">2024</div>
+                    </div>
+                    <p class="project-description">
+                        Real-time financial analytics platform with interactive 3D data visualization, 
+                        predictive analytics, and AI-powered insights. Processes 10M+ data points in real-time.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Three.js</span>
+                        <span class="tech-tag">WebSocket</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">Redis</span>
+                    </div>
+                    <div class="project-stats">
+                        <div class="stat">
+                            <i class="fas fa-users"></i>
+                            <span>50K+ Users</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-chart-line"></i>
+                            <span>99.9% Uptime</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-bolt"></i>
+                            <span>&lt;100ms Response</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2: Nebula Design System -->
+            <div class="project-card reveal delay-1" data-category="frontend,opensource">
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1558655146-364adaf1fcc9?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                         alt="Nebula Design System">
+                    <div class="project-overlay">
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-badge featured">Featured</div>
+                    <div class="project-badge popular">Popular</div>
+                </div>
+                <div class="project-content">
+                    <div class="project-header">
+                        <h3 class="project-title">Nebula Design System</h3>
+                        <div class="project-year">2023</div>
+                    </div>
+                    <p class="project-description">
+                        Enterprise-grade design system used by Fortune 500 companies. 
+                        Includes 150+ accessible components, comprehensive documentation, 
+                        and Figma plugin integration.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Storybook</span>
+                        <span class="tech-tag">Figma API</span>
+                        <span class="tech-tag">Jest</span>
+                    </div>
+                    <div class="project-stats">
+                        <div class="stat">
+                            <i class="fas fa-star"></i>
+                            <span>5K+ Stars</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-download"></i>
+                            <span>1M+ Downloads</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-building"></i>
+                            <span>50+ Companies</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3: AR E-commerce Platform -->
+            <div class="project-card reveal delay-2" data-category="webgl,fullstack">
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                         alt="AR E-commerce Platform">
+                    <div class="project-overlay">
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-badge featured">Featured</div>
+                </div>
+                <div class="project-content">
+                    <div class="project-header">
+                        <h3 class="project-title">Augmented Reality Store</h3>
+                        <div class="project-year">2023</div>
+                    </div>
+                    <p class="project-description">
+                        Next.js e-commerce platform with WebAR product visualization. 
+                        Customers can preview products in their space using device camera, 
+                        increasing conversion by 45%.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Next.js</span>
+                        <span class="tech-tag">Three.js</span>
+                        <span class="tech-tag">WebRTC</span>
+                        <span class="tech-tag">Stripe</span>
+                        <span class="tech-tag">Redis</span>
+                    </div>
+                    <div class="project-stats">
+                        <div class="stat">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span>45% Increase</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>Mobile First</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-video"></i>
+                            <span>Real-time AR</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4: Real-time Collaboration -->
+            <div class="project-card reveal delay-3" data-category="frontend">
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                         alt="Real-time Collaboration Platform">
+                    <div class="project-overlay">
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-header">
+                        <h3 class="project-title">CollabSpace Pro</h3>
+                        <div class="project-year">2022</div>
+                    </div>
+                    <p class="project-description">
+                        Real-time collaborative design tool with multiplayer cursor tracking, 
+                        version history, and export to multiple formats. Supports 100+ concurrent 
+                        users with sub-50ms latency.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Vue.js</span>
+                        <span class="tech-tag">WebSocket</span>
+                        <span class="tech-tag">Canvas API</span>
+                        <span class="tech-tag">IndexedDB</span>
+                        <span class="tech-tag">WebRTC</span>
+                    </div>
+                    <div class="project-stats">
+                        <div class="stat">
+                            <i class="fas fa-users"></i>
+                            <span>100+ Concurrent</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-bolt"></i>
+                            <span>&lt;50ms Latency</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-sync"></i>
+                            <span>Real-time Sync</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 5: AI Code Assistant -->
+            <div class="project-card reveal" data-category="opensource">
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1620712943543-bcc4688e7485?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                         alt="AI Code Assistant">
+                    <div class="project-overlay">
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-badge opensource">Open Source</div>
+                </div>
+                <div class="project-content">
+                    <div class="project-header">
+                        <h3 class="project-title">CodePilot AI</h3>
+                        <div class="project-year">2023</div>
+                    </div>
+                    <p class="project-description">
+                        VS Code extension powered by GPT-4, providing intelligent code completion, 
+                        bug detection, and automated refactoring. Supports 20+ programming languages 
+                        and frameworks.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">OpenAI API</span>
+                        <span class="tech-tag">VS Code API</span>
+                        <span class="tech-tag">WebSockets</span>
+                    </div>
+                    <div class="project-stats">
+                        <div class="stat">
+                            <i class="fas fa-download"></i>
+                            <span>500K+ Installs</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-star"></i>
+                            <span>4.9 Rating</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-code"></i>
+                            <span>20+ Languages</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 6: Health Analytics Dashboard -->
+            <div class="project-card reveal delay-1" data-category="frontend,fullstack">
+                <div class="project-image">
+                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" 
+                         alt="Health Analytics Dashboard">
+                    <div class="project-overlay">
+                        <div class="project-links">
+                            <a href="#" class="project-link">
+                                <i class="fas fa-external-link-alt"></i>
+                            </a>
+                            <a href="#" class="project-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <div class="project-header">
+                        <h3 class="project-title">HealthTrack Pro</h3>
+                        <div class="project-year">2022</div>
+                    </div>
+                    <p class="project-description">
+                        HIPAA-compliant health analytics dashboard for medical professionals. 
+                        Features real-time patient monitoring, predictive analytics, and 
+                        secure data visualization with WebGL charts.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">D3.js</span>
+                        <span class="tech-tag">GraphQL</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">AWS</span>
+                    </div>
+                    <div class="project-stats">
+                        <div class="stat">
+                            <i class="fas fa-hospital"></i>
+                            <span>HIPAA Compliant</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>Enterprise Security</span>
+                        </div>
+                        <div class="stat">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Real-time Data</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="projects-cta reveal">
+            <p class="cta-text">Want to see more projects? Check out my GitHub for complete portfolio.</p>
+            <a href="#" class="btn btn-secondary">
+                <i class="fab fa-github"></i>
+                <span>View GitHub</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- Updated Experience Section (replaces the existing one) -->
+<section id="experience" class="experience-section">
+    <div class="section-container">
+        <div class="section-header">
+            <h2 class="section-title">
+                <span class="title-number">04</span>
+                <span class="title-text">Career Journey</span>
+            </h2>
+            <p class="section-subtitle">Milestones & achievements</p>
+        </div>
+
+        <div class="experience-tabs reveal">
+            <button class="exp-tab active" data-tab="work">Work Experience</button>
+            <button class="exp-tab" data-tab="education">Education</button>
+            <button class="exp-tab" data-tab="certifications">Certifications</button>
+        </div>
+
+        <div class="timeline-content active" id="work-timeline">
+            <!-- Current Role -->
+            <div class="timeline-item reveal">
+                <div class="timeline-marker current"></div>
+                <div class="timeline-content">
+                    <div class="timeline-header">
+                        <div class="timeline-title-section">
+                            <h3 class="timeline-title">Lead Frontend Architect</h3>
+                            <div class="timeline-company">Quantum Technologies</div>
+                        </div>
+                        <div class="timeline-period">2022 - Present · San Francisco, CA</div>
+                    </div>
+                    <p class="timeline-description">
+                        Leading frontend architecture for enterprise SaaS platform serving 500k+ users.
+                        Architected micro-frontend system reducing initial load time by 65%.
+                    </p>
+                    <div class="timeline-achievements">
+                        <div class="achievement">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Improved Core Web Vitals by 45% across all products</span>
+                        </div>
+                        <div class="achievement">
+                            <i class="fas fa-users"></i>
+                            <span>Led team of 12 frontend engineers</span>
+                        </div>
+                        <div class="achievement">
+                            <i class="fas fa-award"></i>
+                            <span>Reduced deployment time from 30min to 2min</span>
+                        </div>
+                    </div>
+                    <div class="timeline-tech">
+                        <span class="tech-badge">React</span>
+                        <span class="tech-badge">TypeScript</span>
+                        <span class="tech-badge">Webpack 5</span>
+                        <span class="tech-badge">GraphQL</span>
+                        <span class="tech-badge">AWS</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Previous Role 1 -->
+            <div class="timeline-item reveal delay-1">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="timeline-header">
+                        <div class="timeline-title-section">
+                            <h3 class="timeline-title">Senior Frontend Engineer</h3>
+                            <div class="timeline-company">Stellar Digital Agency</div>
+                        </div>
+                        <div class="timeline-period">2020 - 2022 · New York, NY</div>
+                    </div>
+                    <p class="timeline-description">
+                        Built design systems and component libraries for Fortune 500 clients.
+                        Improved performance across 15+ client projects.
+                    </p>
+                    <div class="timeline-achievements">
+                        <div class="achievement">
+                            <i class="fas fa-star"></i>
+                            <span>Won 3 design awards for innovative UI solutions</span>
+                        </div>
+                        <div class="achievement">
+                            <i class="fas fa-rocket"></i>
+                            <span>Reduced bundle size by 40% across all projects</span>
+                        </div>
+                        <div class="achievement">
+                            <i class="fas fa-code"></i>
+                            <span>Created reusable component library used by 50+ developers</span>
+                        </div>
+                    </div>
+                    <div class="timeline-tech">
+                        <span class="tech-badge">Vue.js</span>
+                        <span class="tech-badge">Next.js</span>
+                        <span class="tech-badge">Storybook</span>
+                        <span class="tech-badge">Jest</span>
+                        <span class="tech-badge">Figma</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Previous Role 2 -->
+            <div class="timeline-item reveal delay-2">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="timeline-header">
+                        <div class="timeline-title-section">
+                            <h3 class="timeline-title">Frontend Developer</h3>
+                            <div class="timeline-company">Nexus Creative</div>
+                        </div>
+                        <div class="timeline-period">2018 - 2020 · Austin, TX</div>
+                    </div>
+                    <p class="timeline-description">
+                        Developed interactive web experiences for major brands including Nike, Apple, and Google.
+                        Specialized in WebGL animations and complex data visualizations.
+                    </p>
+                    <div class="timeline-achievements">
+                        <div class="achievement">
+                            <i class="fas fa-medal"></i>
+                            <span>Delivered projects with 100% client satisfaction rate</span>
+                        </div>
+                        <div class="achievement">
+                            <i class="fas fa-bolt"></i>
+                            <span>Implemented WebGL visualizations increasing engagement by 300%</span>
+                        </div>
+                        <div class="achievement">
+                            <i class="fas fa-mobile-alt"></i>
+                            <span>Optimized mobile performance for 10M+ users</span>
+                        </div>
+                    </div>
+                    <div class="timeline-tech">
+                        <span class="tech-badge">Three.js</span>
+                        <span class="tech-badge">D3.js</span>
+                        <span class="tech-badge">React</span>
+                        <span class="tech-badge">WebGL</span>
+                        <span class="tech-badge">GSAP</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Previous Role 3 -->
+            <div class="timeline-item reveal delay-3">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="timeline-header">
+                        <div class="timeline-title-section">
+                            <h3 class="timeline-title">UI Developer</h3>
+                            <div class="timeline-company">Pixel Forge Studio</div>
+                        </div>
+                        <div class="timeline-period">2016 - 2018 · Chicago, IL</div>
+                    </div>
+                    <p class="timeline-description">
+                        Created responsive websites and web applications for startups and small businesses.
+                        Focused on CSS animations, micro-interactions, and accessibility.
+                    </p>
+                    <div class="timeline-achievements">
+                        <div class="achievement">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <span>Achieved 95+ Lighthouse scores for all projects</span>
+                        </div>
+                        <div class="achievement">
+                            <i class="fas fa-universal-access"></i>
+                            <span>Implemented WCAG 2.1 AA accessibility standards</span>
+                        </div>
+                        <div class="achievement">
+                            <i class="fas fa-paint-brush"></i>
+                            <span>Created custom animation library still in use today</span>
+                        </div>
+                    </div>
+                    <div class="timeline-tech">
+                        <span class="tech-badge">JavaScript</span>
+                        <span class="tech-badge">CSS3</span>
+                        <span class="tech-badge">Sass</span>
+                        <span class="tech-badge">Webpack</span>
+                        <span class="tech-badge">Git</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Education Timeline -->
+        <div class="timeline-content" id="education-timeline">
+            <div class="timeline-item reveal">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="timeline-header">
+                        <div class="timeline-title-section">
+                            <h3 class="timeline-title">Master of Science in Computer Science</h3>
+                            <div class="timeline-company">Stanford University</div>
+                        </div>
+                        <div class="timeline-period">2014 - 2016 · Stanford, CA</div>
+                    </div>
+                    <p class="timeline-description">
+                        Specialized in Human-Computer Interaction and Frontend Architecture.
+                        Thesis on "Real-time WebGL Data Visualization for Large Datasets".
+                    </p>
+                    <div class="timeline-achievements">
+                        <div class="achievement">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>GPA: 3.9/4.0</span>
+                        </div>
+                        <div class="achievement">
+                            <i class="fas fa-award"></i>
+                            <span>Outstanding Thesis Award</span>
+                        </div>
+                        <div class="achievement">
+                            <i class="fas fa-users"></i>
+                            <span>Teaching Assistant for Web Development</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item reveal delay-1">
+                <div class="timeline-marker"></div>
+                <div class="timeline-content">
+                    <div class="timeline-header">
+                        <div class="timeline-title-section">
+                            <h3 class="timeline-title">Bachelor of Science in Computer Engineering</h3>
+                            <div class="timeline-company">MIT</div>
+                        </div>
+                        <div class="timeline-period">2010 - 2014 · Cambridge, MA</div>
+                    </div>
+                    <p class="timeline-description">
+                        Focused on Software Engineering and Web Technologies.
+                        Minor in Graphic Design and User Experience.
+                    </p>
+                    <div class="timeline-achievements">
+                        <div class="achievement">
+                            <i class="fas fa-graduation-cap"></i>
+                            <span>GPA: 3.8/4.0</span>
+                        </div>
+                        <div class="achievement">
+                            <i class="fas fa-medal"></i>
+                            <span>Dean's List (All Semesters)</span>
+                        </div>
+                        <div class="achievement">
+                            <i class="fas fa-code"></i>
+                            <span>President of Web Development Club</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Certifications Timeline -->
+        <div class="timeline-content" id="certifications-timeline">
+            <div class="certifications-grid">
+                <div class="certification-card reveal">
+                    <div class="cert-icon">
+                        <i class="fab fa-aws"></i>
+                    </div>
+                    <h3 class="cert-title">AWS Solutions Architect</h3>
+                    <div class="cert-issuer">Amazon Web Services</div>
+                    <div class="cert-date">2023</div>
+                    <a href="#" class="cert-link">View Credential</a>
+                </div>
+
+                <div class="certification-card reveal delay-1">
+                    <div class="cert-icon">
+                        <i class="fab fa-react"></i>
+                    </div>
+                    <h3 class="cert-title">React Expert Certification</h3>
+                    <div class="cert-issuer">Meta (Facebook)</div>
+                    <div class="cert-date">2022</div>
+                    <a href="#" class="cert-link">View Credential</a>
+                </div>
+
+                <div class="certification-card reveal delay-2">
+                    <div class="cert-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="cert-title">Web Security Expert</h3>
+                    <div class="cert-issuer">OWASP Foundation</div>
+                    <div class="cert-date">2021</div>
+                    <a href="#" class="cert-link">View Credential</a>
+                </div>
+
+                <div class="certification-card reveal delay-3">
+                    <div class="cert-icon">
+                        <i class="fas fa-palette"></i>
+                    </div>
+                    <h3 class="cert-title">UI/UX Design Professional</h3>
+                    <div class="cert-issuer">Nielsen Norman Group</div>
+                    <div class="cert-date">2020</div>
+                    <a href="#" class="cert-link">View Credential</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Experience Stats -->
+        <div class="experience-stats reveal">
+            <div class="exp-stat">
+                <div class="exp-stat-number">7+</div>
+                <div class="exp-stat-label">Years Experience</div>
+            </div>
+            <div class="exp-stat">
+                <div class="exp-stat-number">50+</div>
+                <div class="exp-stat-label">Projects Delivered</div>
+            </div>
+            <div class="exp-stat">
+                <div class="exp-stat-number">30+</div>
+                <div class="exp-stat-label">Happy Clients</div>
+            </div>
+            <div class="exp-stat">
+                <div class="exp-stat-number">12</div>
+                <div class="exp-stat-label">Team Members Led</div>
+            </div>
+            <div class="exp-stat">
+                <div class="exp-stat-number">5</div>
+                <div class="exp-stat-label">Industry Awards</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="title-number"></span>
+                    <span class="title-text">Get In Touch</span>
+                </h2>
+                <p class="section-subtitle">Let's build something extraordinary</p>
+            </div>
+            
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3 class="contact-headline">Ready to elevate your digital presence?</h3>
+                    <p class="contact-text">
+                        I'm currently available for selective freelance projects and full-time opportunities 
+                        at innovative companies.
+                    </p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-envelope"></i>
+                            </div>
+                            <div class="contact-detail">
+                                <div class="detail-label">Email</div>
+                                <a href="mailto:techcstanveer@gmail.com" class="detail-value">techcstanveer@gmail.com</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="contact-detail">
+                                <div class="detail-label">Phone</div>
+                                <a href="tel:+92 3554363466" class="detail-value">+92 3554363466</a>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="contact-detail">
+                                <div class="detail-label">Location</div>
+                                <div class="detail-value">Gilgit Baltistan, Pakistan</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="https://github.com/maitanveer" class="social-link magnetic">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/tanveer-ahmad-69a47236b/" class="social-link magnetic">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="#" class="social-link magnetic">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="https://dribbble.com/techcstanveer" class="social-link magnetic">
+                            <i class="fab fa-dribbble"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <form class="contact-form">
+                    <div class="form-group">
+                        <label for="name" class="form-label">Full Name</label>
+                        <input type="text" id="name" class="form-input" required>
+                        <div class="form-line"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email Address</label>
+                        <input type="email" id="email" class="form-input" required>
+                        <div class="form-line"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="subject" class="form-label">Subject</label>
+                        <input type="text" id="subject" class="form-input" required>
+                        <div class="form-line"></div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message" class="form-label">Message</label>
+                        <textarea id="message" class="form-textarea" rows="5" required></textarea>
+                        <div class="form-line"></div>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-submit">
+                        <span>Send Message</span>
+                        <i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <div class="footer-logo">DEVELOPER</div>
+                <p class="footer-text">
+                    Crafting exceptional digital experiences with precision and passion.
+                </p>
+            </div>
+            
+            <div class="footer-links">
+                <a href="#hero" class="footer-link">Home</a>
+                <a href="#about" class="footer-link">About</a>
+                <a href="#projects" class="footer-link">Projects</a>
+                <a href="#contact" class="footer-link">Contact</a>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="copyright">© 2024 Tanveer Ahmad. All rights reserved.</div>
+                <div class="footer-credits">
+                    Built with <i class="fas fa-heart"></i> and pure code
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/particles.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
