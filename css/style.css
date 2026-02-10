@@ -1085,7 +1085,7 @@ body:hover .cursor-outline {
 .project-badge.new {
     background: var(--color-accent-tertiary);
     color: var(--color-bg-primary);
-    right: calc(var(--spacing-md) + 160px);
+    right: calc(var(--spacing-md) + 180px);
 }
 
 .project-badge.popular {
