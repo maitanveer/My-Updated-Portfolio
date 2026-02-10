@@ -1246,6 +1246,19 @@ body:hover .cursor-outline {
     box-shadow: 0 0 0 4px rgba(0, 255, 170, 0.2);
 }
 
+.timeline-card {
+  background: var(--color-bg-tertiary);
+  border-radius: var(--radius-lg);
+  padding: var(--spacing-xl);
+  border: 1px solid var(--color-border);
+  transition: all var(--transition-base);
+}
+
+.timeline-card:hover {
+  transform: translateX(8px);
+  box-shadow: var(--shadow-lg);
+}
+
 .timeline-content {
     background: var(--color-bg-tertiary);
     border-radius: var(--radius-lg);
