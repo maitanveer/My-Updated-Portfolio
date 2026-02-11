@@ -1076,13 +1076,13 @@ body:hover .cursor-outline {
     letter-spacing: 1px;
 }
 
-.project-badge.featured {
+/* .project-badge.featured {
     background: var(--color-accent-primary);
     color: var(--color-bg-primary);
     right: calc(var(--spacing-md) + 100px);
-}
+} */
 
-.project-badge.new {
+/* .project-badge.new {
     background: var(--color-accent-tertiary);
     color: var(--color-bg-primary);
     right: calc(var(--spacing-md) + 180px);
@@ -1091,12 +1091,12 @@ body:hover .cursor-outline {
 .project-badge.popular {
     background: var(--color-accent-secondary);
     color: white;
-}
+} */
 
-.project-badge.opensource {
+/* .project-badge.opensource {
     background: #f0db4f;
     color: #323330;
-}
+} */
 
 .project-content {
     padding: var(--spacing-xl);
