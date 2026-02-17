@@ -565,9 +565,9 @@ body:hover .cursor-outline {
     border-radius: 50%;
 }
 
-.dot.red { background: #ff5f56; }
-.dot.yellow { background: #ffbd2e; }
-.dot.green { background: #27ca3f; }
+.dot.red { background: #d60f80; }
+.dot.yellow { background: #a1af04; }
+.dot.green { background: #03b12e; }
 
 .code-filename {
     font-size: var(--text-sm);
@@ -583,11 +583,11 @@ body:hover .cursor-outline {
     overflow-x: auto;
 }
 
-.code-keyword { color: #ff79c6; }
-.code-var { color: #8be9fd; }
-.code-prop { color: #50fa7b; }
-.code-string { color: #f1fa8c; }
-.code-boolean { color: #bd93f9; }
+.code-keyword { color: #d60f80; }
+.code-var { color: #0585a1; }
+.code-prop { color: #03b12e; }
+.code-string { color: #a1af04; }
+.code-boolean { color: #9776c4; }
 
 .scroll-indicator {
     position: absolute;
